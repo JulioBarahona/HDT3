@@ -52,7 +52,10 @@ public class Main{
         // starts timer called sort2Start
         long sort2Start = System.currentTimeMillis();
         //calls function gnomeSorting, in the object newTextGeneratos, parameter sort2Data
+
+        ////FIX null poitner exception
         newTextGenerator.quickSorting(sort2Data);
+
         //takes time after sorting is done, called sort2Stop
         long sort2Stop = System.currentTimeMillis();
         //makes difference  in time

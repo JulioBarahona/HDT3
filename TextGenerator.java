@@ -23,6 +23,7 @@ public class TextGenerator {
     //generates file and makes the int array ready to be used
     public void fileGenerator() throws Exception {
 
+
         //makes new random
         Random newRandomNumber = new Random();
 
@@ -48,13 +49,22 @@ public class TextGenerator {
             }
         }
 
-
-
-
-
-
         //makes new reader object
         BufferedReader reader = Files.newBufferedReader(outputPath, Charset.defaultCharset());
+
+        //reader object to read line
+        String input = reader.readLine();
+
+        //array called token, reades the file and makes new objects each " " (space line) it reads
+        String[] tokens = input.split(" ");
+
+        // new integer array called numbers, size og the token lenght
+        numbers = new int[tokens.length];
+
+        //parses each string into an int
+        for (int i = 0; i < tokens.length; i++) {
+            numbers[i] = Integer.parseInt(tokens[i]);
+        }
     }
 
     //reference took from: http://www.mycstutorials.com/articles/sorting/quicksort
@@ -66,7 +76,7 @@ public class TextGenerator {
         int lowDigit = 0;
         int highDigit = unsortedArray.length - 1;
 
-        //reference:http://www.programcreek.com/2012/11/quicksort-array-in-java/
+        //reference: http://www.programcreek.com/2012/11/quicksort-array-in-java/
         if (unsortedArray == null || unsortedArray.length == 0)
             return;
 
@@ -98,11 +108,13 @@ public class TextGenerator {
         }
 
         // recursively sort two sub parts
-        if (lowDigit < j)
+        if (lowDigit < j) {
             quickSorting(unsortedArray);
+        }
 
-        if (highDigit > i)
+        if (highDigit > i) {
             quickSorting(unsortedArray);
+        }
     }
 
     // reference: https://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Gnome_sort
@@ -126,9 +138,4 @@ public class TextGenerator {
     public void radixSorting() {
 
     }
-
-    public void gnomeSorting(){
-
-    }
-
 }
