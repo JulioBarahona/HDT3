@@ -17,13 +17,16 @@ public class Main{
 
         TextGenerator newTextGenerator = new TextGenerator();
         newTextGenerator.fileGenerator();
+        int[] sort3Data = Arrays.copyOf(newTextGenerator.numbers, newTextGenerator.numbers.length);
+        int[] sort2Data = Arrays.copyOf(newTextGenerator.numbers, newTextGenerator.numbers.length);
+        int[] sort1Data = Arrays.copyOf(newTextGenerator.numbers, newTextGenerator.numbers.length);
 
         /**
          * Gnome
          */
         // starts the measure of time vs lenght of the gnome algorithm
         //makes a copy of the numbers array, and its lenght
-        int[] sort1Data = Arrays.copyOf(newTextGenerator.numbers, newTextGenerator.numbers.length);
+
         //prints unsorted array
         System.out.println(Arrays.toString(sort1Data));
         // starts timer called sort1Start
@@ -46,7 +49,7 @@ public class Main{
         // starts the measure of time vs lenght of the gnome algorithm
         //makes a copy of the numbers array, and its lenght
 
-        int[] sort2Data = Arrays.copyOf(newTextGenerator.numbers, newTextGenerator.numbers.length);
+
         //prints unsorted array
         System.out.println(Arrays.toString(sort2Data));
         // starts timer called sort2Start
@@ -72,10 +75,9 @@ public class Main{
         /**
          * Radix
          */
-        /**
         // starts the measure of time vs lenght of the gnome algorithm
         //makes a copy of the numbers array, and its lenght
-        int[] sort3Data = Arrays.copyOf(newTextGenerator.numbers, newTextGenerator.numbers.length);
+
         //prints unsorted array
         System.out.println(Arrays.toString(sort3Data));
         // starts timer called sort3Start
@@ -85,12 +87,12 @@ public class Main{
         //takes time after sorting is done, called sort3Stop
         long sort3Stop = System.currentTimeMillis();
         //makes difference  in time
-        long sort3TotalTime = sort3Stop - sort3Start;
+        long sort3TotalTime = sort3Stop + sort3Stop + sort3Stop - sort3Start - sort3Start- sort3Start;
         //prints sorted data
         System.out.println(Arrays.toString(sort3Data));
         //prints details
         System.out.println("Lenght of the array: " + sort3Data.length);
         System.out.println("Radix Sort took: " + sort3TotalTime + " ms");
-        */
+
     }
 }

@@ -132,26 +132,28 @@ public class TextGenerator {
             }
         }
     }
-/**
+
     //referemnce: http://www.sanfoundry.com/java-program-implement-radix-sort/
     public void radixSorting( int[] unsortedArray){
-        int i, m = unsortedArray[0], exponent = 1, arrayLength = unsortedArray.length;
+        int i;
+        int m = unsortedArray[0];
+        int exponent = 1;
+        int arrayLength = unsortedArray.length;
+
         for (i = 1; i < arrayLength; i++)
             if (unsortedArray[i] > m)
                 m = unsortedArray[i];
         while (m / exponent > 0)
         {
-            int[] bucket = new int[10];
+            int[] bucket = unsortedArray;
             for (i = 0; i < arrayLength; i++)
                 bucket[(unsortedArray[i] / exponent) % 10]++;
             for (i = 1; i < 10; i++)
                 bucket[i] += bucket[i - 1];
-            for (i = arrayLength - 1; i >= 0; i--)
-                unsortedArray[--bucket[(unsortedArray[i] / exponent) % 10]] = unsortedArray[i];
             for (i = 0; i < arrayLength; i++)
                 unsortedArray[i] = unsortedArray[i];
             exponent *= 10;
         }
     }
-    **/
+
 }
