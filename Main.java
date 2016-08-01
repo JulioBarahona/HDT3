@@ -50,11 +50,14 @@ public class Main{
         //prints unsorted array
         System.out.println(Arrays.toString(sort2Data));
         // starts timer called sort2Start
+
+        int lowOutside = 0;
+        int highOutside = sort2Data.length - 1;
         long sort2Start = System.currentTimeMillis();
         //calls function gnomeSorting, in the object newTextGeneratos, parameter sort2Data
 
-        ////FIX null poitner exception
-        newTextGenerator.quickSorting(sort2Data);
+        ////based on http://www.programcreek.com/2012/11/quicksort-array-in-java/
+        newTextGenerator.quickSorting(sort2Data, lowOutside, highOutside);
 
         //takes time after sorting is done, called sort2Stop
         long sort2Stop = System.currentTimeMillis();
@@ -64,7 +67,7 @@ public class Main{
         System.out.println(Arrays.toString(sort2Data));
         //prints details
         System.out.println("Lenght of the array: " + sort2Data.length);
-        System.out.println("Gnome Sort took: " + sort2TotalTime + " ms");
+        System.out.println("Quick Sort took: " + sort2TotalTime + " ms");
 
         /**
          * Radix
@@ -86,7 +89,7 @@ public class Main{
         System.out.println(Arrays.toString(sort3Data));
         //prints details
         System.out.println("Lenght of the array: " + sort3Data.length);
-        System.out.println("Gnome Sort took: " + sort3TotalTime + " ms");
+        System.out.println("Radix Sort took: " + sort3TotalTime + " ms");
 
     }
 }

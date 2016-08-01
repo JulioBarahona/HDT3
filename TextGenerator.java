@@ -68,54 +68,53 @@ public class TextGenerator {
     }
 
     //reference took from: http://www.mycstutorials.com/articles/sorting/quicksort
-    public void quickSorting(int[] unsortedArray) {
-
-        /**
-         * used for quick sort algorithm
-         */
-        int lowDigit = 0;
-        int highDigit = unsortedArray.length - 1;
-
-        //reference: http://www.programcreek.com/2012/11/quicksort-array-in-java/
-        if (unsortedArray == null || unsortedArray.length == 0)
+    //se comienza a definir metodo
+    public static void quickSorting(int[] unsortedArrayInside, int lowInside, int highInside) {
+        //lista vacia
+        if (unsortedArrayInside == null || unsortedArrayInside.length == 0)
             return;
 
-        if (lowDigit >= highDigit)
+        //lista incoerente
+        if (lowInside >= highInside)
             return;
 
-        // pick the pivot
-        int middle = lowDigit + (highDigit - lowDigit) / 2;
-        int pivot = unsortedArray[middle];
+        // define en cual va a ser el punto 'medio'
+        int middleInside = lowInside + (highInside - lowInside) / 2;
+        //asigna el pivote
+        int pivote = unsortedArrayInside[middleInside];
 
-        // make left < pivot and right > pivot
-        int i = lowDigit, j = highDigit;
-        while (i <= j) {
-            while (unsortedArray[i] < pivot) {
-                i++;
+        // hace la region izquierda y derecha
+        int letterI = lowInside, letterJ = highInside;
+        while (letterI <= letterJ) {
+
+            //agrega elementos a la lista izquierda
+            while (unsortedArrayInside[letterI] < pivote) {
+                letterI++;
             }
 
-            while (unsortedArray[j] > pivot) {
-                j--;
+            while (unsortedArrayInside[letterJ] > pivote) {
+                letterJ--;
             }
 
-            if (i <= j) {
-                int temp = unsortedArray[i];
-                unsortedArray[i] = unsortedArray[j];
-                unsortedArray[j] = temp;
-                i++;
-                j--;
+            //agrega elementos a la lista derecha
+            if (letterI <= letterJ) {
+                int temp = unsortedArrayInside[letterI];
+                unsortedArrayInside[letterI] = unsortedArrayInside[letterJ];
+                unsortedArrayInside[letterJ] = temp;
+                letterI++;
+                letterJ--;
             }
         }
 
-        // recursively sort two sub parts
-        if (lowDigit < j) {
-            quickSorting(unsortedArray);
-        }
+        // recursion para arreglar sub listas
+        if (lowInside < letterJ)
+            quickSorting(unsortedArrayInside, lowInside, letterJ);
 
-        if (highDigit > i) {
-            quickSorting(unsortedArray);
-        }
+        if (highInside > letterI)
+            quickSorting(unsortedArrayInside, letterI, highInside);
     }
+
+
 
     // reference: https://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Gnome_sort
     public void gnomeSorting(int[] unsortedArray) {
