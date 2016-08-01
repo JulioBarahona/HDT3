@@ -72,6 +72,7 @@ public class Main{
         /**
          * Radix
          */
+        /**
         // starts the measure of time vs lenght of the gnome algorithm
         //makes a copy of the numbers array, and its lenght
         int[] sort3Data = Arrays.copyOf(newTextGenerator.numbers, newTextGenerator.numbers.length);
@@ -80,7 +81,7 @@ public class Main{
         // starts timer called sort3Start
         long sort3Start = System.currentTimeMillis();
         //calls function gnomeSorting, in the object newTextGeneratos, parameter sort3Data
-        newTextGenerator.radixSorting();
+        newTextGenerator.radixSorting(sort3Data);
         //takes time after sorting is done, called sort3Stop
         long sort3Stop = System.currentTimeMillis();
         //makes difference  in time
@@ -90,6 +91,6 @@ public class Main{
         //prints details
         System.out.println("Lenght of the array: " + sort3Data.length);
         System.out.println("Radix Sort took: " + sort3TotalTime + " ms");
-
+        */
     }
 }
