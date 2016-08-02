@@ -2,6 +2,9 @@
 *Sorts, Esta clase define los metodos sort a utilizar 
 *@version: 1.08.16
 *@author: Rafael Leon, Pablo Lopez, Julio Barahona
+* reference: Quicksort http://www.programcreek.com/2012/11/quicksort-array-in-java/
+* reference: Selection Sort: http://stackoverflow.com/questions/8362640/java-selection-sort-algorithm
+* reference: Insertion Sort: http://www.journaldev.com/585/insertion-sort-in-java
 */
 public class Sorts<T> implements I_Sorts<T> {
 
