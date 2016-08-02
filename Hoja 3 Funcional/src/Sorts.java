@@ -2,9 +2,6 @@
 *Sorts, Esta clase define los metodos sort a utilizar 
 *@version: 1.08.16
 *@author: Rafael Leon, Pablo Lopez, Julio Barahona
-* reference: Quicksort http://www.programcreek.com/2012/11/quicksort-array-in-java/
-* reference: Selection Sort: http://stackoverflow.com/questions/8362640/java-selection-sort-algorithm
-* reference: Insertion Sort: http://www.journaldev.com/585/insertion-sort-in-java
 */
 public class Sorts<T> implements I_Sorts<T> {
 
@@ -24,10 +21,10 @@ public class Sorts<T> implements I_Sorts<T> {
 	        {
 	            int index = i;
 	            for (int j = i + 1; j < array.length; j++)
-	                if ((int)array[j] < (int)array[index])
+	                if ((Integer)array[j] < (Integer)array[index])
 	                    index = j;
 
-	            int smallerNumber = (int)array[index]; 
+	            int smallerNumber = (Integer)array[index]; 
 	            array[index] = array[i];
 	            array[i]  = (T) new Integer(smallerNumber);
 	        }
@@ -42,15 +39,15 @@ public class Sorts<T> implements I_Sorts<T> {
 		int numerosOrd = 1;
 		int index;
 		while(numerosOrd < n){
-			int temp = (int) datos[numerosOrd];
+			int temp = (Integer) datos[numerosOrd];
 			for (index = numerosOrd; index > 0; index--){
-				if (temp < (int)datos[index - 1]){
+				if (temp < (Integer)datos[index - 1]){
 					datos[index]=datos[index-n];
 				}else {
 					break;
 				}
 			}
-			int x = (int)datos[index];
+			int x = (Integer)datos[index];
 			x =temp;
 			numerosOrd++;
 		}
@@ -72,13 +69,13 @@ public class Sorts<T> implements I_Sorts<T> {
 	private void recursive(int low, int high) {
 		int i = low;
 		int j = high;
-		int pivot = (int) datos[low + (high - low)/2];
+		int pivot = (Integer) datos[low + (high - low)/2];
 		while (i <= j) {
-			while ((int)datos[i] < pivot) {
+			while ((Integer)datos[i] < pivot) {
 				i++;
 			}
 			
-			while ((int)datos[j] > pivot) {
+			while ((Integer)datos[j] > pivot) {
 				j--;
 			}
 			
