@@ -3,6 +3,7 @@
 *I_Sorts, Esta interfaz define los metodos de ordenamiento
 *@version: 1.08.16
 *@author: Rafael Leon, Pablo Lopez, Julio Barahona
+* Reference: http://www.programcreek.com/2012/11/quicksort-array-in-java/
 */
 
 public interface I_Sorts<T> {
